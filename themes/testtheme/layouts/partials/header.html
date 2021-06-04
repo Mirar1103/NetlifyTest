@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+    <title> {{ if .IsHome }} {{ .Site.Title }} {{ else }} {{ .Title }} {{ end }} </title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+    {{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+</head>
+
+<body>

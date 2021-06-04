@@ -1,0 +1,12 @@
+<!-- Header -->
+{{ partial "header.html" . }}
+
+{{ if eq .Type "page" }}
+{{ partial "page.html" . }}
+{{ else }}
+{{ partial "article.html" .}}
+{{ end }}
+{{partial "field.html" (dict "Fields" (dict "IMG1" .Params.fields.img1 "IMG2" .Params.fields.img2 "IMG3" .Params.fields.img3))}}
+{{partial "field.html" (dict "context" . "Fields" (dict "IMG1" .Params.fields.img3 "IMG2" .Params.fields.img2 "IMG3" .Params.fields.img1))}}
+<!-- Footer -->
+{{ partial "footer.html" . }}
